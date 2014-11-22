@@ -1,0 +1,5 @@
+# eclude everything below
+build/
+target/
+.gradle/
+
