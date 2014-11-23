@@ -11,7 +11,7 @@ using:
 ## to build
 
 ```
-./gradew build
+./gradlew build
 ```
 
 # to start 
