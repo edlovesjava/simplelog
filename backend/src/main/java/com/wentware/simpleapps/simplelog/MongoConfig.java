@@ -1,7 +1,6 @@
 package com.wentware.simpleapps.simplelog;
 
 import com.mongodb.Mongo;
-import java.net.UnknownHostException;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.authentication.UserCredentials;
