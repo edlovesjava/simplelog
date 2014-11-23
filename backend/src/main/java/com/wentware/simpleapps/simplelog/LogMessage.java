@@ -10,6 +10,9 @@ public class LogMessage {
     private String message;
     private String mood;
     private String recordedOn;
+    private String feeling;
+    private String incident;
+    private String resolution;
 
     public LogMessage() {
         
@@ -70,5 +73,47 @@ public class LogMessage {
      */
     public void setRecordedOn(String recordedOn) {
         this.recordedOn = recordedOn;
+    }
+
+    /**
+     * @return the feeling
+     */
+    public String getFeeling() {
+        return feeling;
+    }
+
+    /**
+     * @param feeling the feeling to set
+     */
+    public void setFeeling(String feeling) {
+        this.feeling = feeling;
+    }
+
+    /**
+     * @return the incident
+     */
+    public String getIncident() {
+        return incident;
+    }
+
+    /**
+     * @param incident the incident to set
+     */
+    public void setIncident(String incident) {
+        this.incident = incident;
+    }
+
+    /**
+     * @return the resolution
+     */
+    public String getResolution() {
+        return resolution;
+    }
+
+    /**
+     * @param resolution the resolution to set
+     */
+    public void setResolution(String resolution) {
+        this.resolution = resolution;
     }
 }
