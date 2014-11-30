@@ -37,7 +37,10 @@ dependencies {
 task local {
     run { systemProperty "spring.profiles.active", "development" }
 }
-
+war{
+ archiveName = 'ROOT.war'
+ destinationDir = file('webapps')
+}
 bootRun.mustRunAfter local
 
 task wrapper(type: Wrapper) {

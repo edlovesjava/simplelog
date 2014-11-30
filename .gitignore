@@ -1,3 +1,3 @@
-/backend/.nb-gradle/private/
-/frontend/nbproject/private/
+.nb-gradle/private/
 /target/
+/build/
