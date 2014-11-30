@@ -87,6 +87,11 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
@@ -112,7 +117,7 @@
             <build>
                 <finalName>simplelog</finalName>
                 <plugins>
-<!--                    <plugin>
+                    <!--                    <plugin>
                         <groupId>org.springframework.boot</groupId>
                         <artifactId>spring-boot-maven-plugin</artifactId>
                     </plugin>-->
@@ -122,6 +127,7 @@
                         <configuration>
                             <outputDirectory>webapps</outputDirectory>
                             <warName>ROOT</warName>
+<!--                            <webResources>src/main/resources</webResources>-->
                         </configuration>
                     </plugin>
                 </plugins>

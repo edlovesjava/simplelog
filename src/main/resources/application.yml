@@ -1,0 +1,14 @@
+spring:
+    profiles: development
+    application:
+        name: simplelog
+    datasource:
+        database: database
+        connection:
+            url: localhost
+        usecredentials: no            
+        user:
+            name: root
+            password: 
+server:
+    port: 8080
