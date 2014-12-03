@@ -15,7 +15,9 @@ using:
 
 ## to build with maven
 
+```
 mvn clean install
+```
 
 # to start 
 
