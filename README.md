@@ -7,6 +7,20 @@ using:
 * Spring MVC - REST
 * Gradle 
 
+# manage source code
+
+## push master to openstack
+
+```
+git push 
+```
+
+## pushes master to github
+
+```
+git push github master
+```
+
 ## to build
 
 ```
