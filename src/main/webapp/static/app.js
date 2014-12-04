@@ -16,7 +16,7 @@ Ext.application({
             },
             proxy: {
                 type: 'ajax',
-                url: 'http://localhost:8080/api/logmessages',
+                url: '/api/logmessages',
                 reader: {
                     type: 'json',
                     rootProperty: '_embedded.logmessages'
