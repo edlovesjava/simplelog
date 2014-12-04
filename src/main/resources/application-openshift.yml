@@ -1,14 +1,14 @@
 spring:
-    profiles: development
+    profiles: test
     application:
         name: simplelog
     datasource:
-        database: database
         connection:
-            url: localhost
-        usecredentials: no            
+            url: ${OPENSHIFT_MONGODB_HOST}:${OPENSHIFT_MONGODB_PORT}
+        database: simplelog
+        usecredentials: yes
         user:
-            name: root
-            password: 
+            name: admin
+            password: hZL3FZR9XBEk        
 server:
-    port: 8080
+    port: ${OPENSHIFT_JBOSSEWS_HTTP_PORT}
