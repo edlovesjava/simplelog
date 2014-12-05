@@ -1,0 +1,15 @@
+mongodb-2.4 (MongoDB 2.4)
+-------------------------
+  Gears:          Located with diy-0.1
+  Connection URL: mongodb://$OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT/
+  Database Name:  simplelog
+  Password:       97g6nurgCk5H
+  Username:       admin
+
+MongoDB 2.4 database added.  Please make note of these credentials:
+
+   Root User:     admin
+   Root Password: 97g6nurgCk5H
+   Database Name: simplelog
+
+Connection URL: mongodb://$OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT/
