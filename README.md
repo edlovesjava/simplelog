@@ -1,83 +1,64 @@
-# Prerequisite
+# simplelog
 
-Before we can start building the application, we need to have an OpenShift free account and client tools installed.
+Simple mobile app based application for daily log of feelings
 
-# Step 1: Create DIY application
+using:
+* Spring Boot
+* Spring MVC - REST
+* Gradle 
 
-To create an application using client tools, type the following command:
+# manage source code
 
-    rhc app create boot diy-0.1
+## push master to openstack
 
-This command creates an application *boot* using *DIY* cartridge and clones the repository to *boot* directory.
+```
+git push 
+```
 
-# Step 2: Add PostgreSQL cartridge to application
+## pushes master to github
 
-The application we are creating will use PostgreSQL database, hence we need to add appropriate cartridge to the application:
+```
+git push github master
+```
 
-	rhc cartridge add postgresql-9.2 --app boot
+## to build
 
-After creating the cartridge, it is possible to check its status with the following command:
+```
+./gradlew build
+```
 
-    rhc cartridge status postgresql-9.2 --app boot
+## to build with maven
 
-# Step 3: Delete Template Application Source code
+```
+mvn clean install
+```
 
-OpenShift creates a template project that can be freely removed:
+# to start 
 
-    git rm -rf .openshift README.md diy misc
+## to start with spring boot from jar
 
-Commit the changes:
+```
+java -jar -Dspring.profiles.active=test build/libs/simple-log-0.1.0.jar
 
-    git commit -am "Removed template application source code"
+```
+## to start with maven with embedded tomcat
 
-# Step 4: Pull Source code from GitHub
+```
+mvn spring-boot:run  -Drun.jvmArguments="-Dspring.profiles.active=development"
+```
 
-    git remote add upstream https://github.com/kolorobot/openshift-diy-spring-boot-sample.git
-    git pull -s recursive -X theirs upstream master
+## profiles to use
 
-# Step 5: Push changes
+* development - used during development, expects local mongodb to be runninhg
+* test - used during test with remote mongodb
+* openshift - used after push to openshift using mongo on openshift
 
-The basic template is ready to be pushed:
+# hosting
 
-	git push
+The OpenShift `jbossews` cartridge documentation can be found at:
 
-The initial deployment (build and application startup) will take some time (up to several minutes). Subsequent deployments are a bit faster, although starting Spring Boot application may take even more than 2 minutes on small Gear:
+http://openshift.github.io/documentation/oo_cartridge_guide.html#tomcat
 
-	Tomcat started on port(s): 8080/http
-	Started Application in 125.511 seconds
+## configuring for openshift
 
-You can now browse to: http://boot-<namespace>.rhcloud.com/manage/health and you should see:
 
-	{
-		"status": "UP",
-		"database": "PostgreSQL",
-		"hello": 1
-	}
-
-You can then browse to "/" to see the API root resource.
-
-# Step 6: Adding Jenkins
-
-Using Jenkins has some advantages. One of them is that the build takes place in it's own Gear. To build with Jenkins, OpenShift needs a server and a Jenkins client cartridge attached to the application. Creating Jenkins application:
-
-	rhc app create ci jenkins
-
-And attaching Jenkins client to the application:
-
-	rhc cartridge add jenkins-client --app boot
-
-You can now browse to: http://ci-<namespace>.rhcloud.com and login with the credentials provided. When you make next changes and push them, the build will be triggered by Jenkins:
-
-	remote: Executing Jenkins build.
-	remote:
-	remote: You can track your build at https://ci-<namespace>.rhcloud.com/job/boot-build
-	remote:
-	remote: Waiting for build to schedule.........
-
-And when you observe the build result, the application starts a bit faster on Jenkins:
-
-	Started Application in 52.391 seconds
-
-# Under the hood
-
-http://blog.codeleak.pl/2014/10/spring-boot-java-8-tomcat-8-on-openshift.html
