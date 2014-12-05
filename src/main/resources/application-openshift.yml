@@ -9,6 +9,6 @@ spring:
         usecredentials: yes
         user:
             name: admin
-            password: hZL3FZR9XBEk        
+            password: 97g6nurgCk5H        
 server:
     port: ${OPENSHIFT_DIY_PORT}
