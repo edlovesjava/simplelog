@@ -1,4 +1,0 @@
-#!/bin/bash
-cd $OPENSHIFT_REPO_DIR
-nohup java -jar -Dspring.profiles.active=openshift target/*.jar --server.port=${OPENSHIFT_JBOSSEWS_HTTP_PORT} --server.address=${OPENSHIFT_JBOSSEWS_IP}
-
